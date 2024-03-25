@@ -3,7 +3,6 @@
 // Parámetros: array (Array) - Un array de números
 // Devuelve: Number - La suma de todos los elementos del array
 const sumArray = () => {
-    const array = [1, 2, 3, 4, 5];
     let sum = 0;
 
     array.forEach(element => {
@@ -12,7 +11,6 @@ const sumArray = () => {
 
     return sum;
 
-    console.log(sumArray(array));
   };
   
   // Función filterEvenNumbers: Filtrar números pares de un array
@@ -24,6 +22,7 @@ const sumArray = () => {
         if(element % 2 === 0 )  {
             eventNumbers.push(element)
         }
+        return evenNumbers;
     });
   };
   
@@ -36,6 +35,7 @@ const sumArray = () => {
         if (element > maxNumber) {
             maxNumber = element;
         }
+        return maxNumber;
     });
   };
   
@@ -43,7 +43,8 @@ const sumArray = () => {
   // Parámetros: array (Array) - Un array de strings
   // Devuelve: Array - Un nuevo array con todas las strings convertidas a mayúsculas
   const toUpperCaseStrings = () => {
-    
+    const upperCaseArray = array.map(string => string.toUpperCase());
+    return upperCaseArray;
   };
 
   
@@ -51,14 +52,23 @@ const sumArray = () => {
   // Parámetros: array (Array) - Un array de números
   // Devuelve: Number - El promedio de los números en el array
   const calculateAverage = () => {
+    let sum = 0;
     
-  };
+    array.forEach(element => {
+        sum += element;
+    });
+    
+    const average = sum / array.length;
+    
+    return average;
+};
   
   // Función sortNumbersAscending: Ordenar un array de números de forma ascendente
   // Parámetros: array (Array) - Un array de números
   // Devuelve: Array - Un nuevo array con los números ordenados de forma ascendente
   const sortNumbersAscending = () => {
-    
+    const sortedArray = array.slice().sort((a, b) => a - b);
+    return sortedArray;
   };
   
   // Función findFirstElement: Encontrar el primer elemento que cumple una condición en un array
@@ -67,7 +77,13 @@ const sumArray = () => {
   // - condition (Function) - Una función de condición que devuelve true o false
   // Devuelve: Any - El primer elemento que cumple con la condición, o undefined si ninguno lo hace
   const findFirstElement = () => {
+    for (let i = 0; i < array.length; i++) {
     
+        if (condition(array[i])) {
+            return array[i];
+        }
+    }
+    return undefined;
   };
   
   // Función countElements: Contar la cantidad de elementos en un array
