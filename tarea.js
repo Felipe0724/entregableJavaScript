@@ -19,14 +19,24 @@ const sumArray = () => {
   // Parámetros: array (Array) - Un array de números
   // Devuelve: Array - Un nuevo array con solo los números pares del array original
   const filterEvenNumbers = () => {
-    
+    const evenNumbers = [];
+    array.forEach(element => {
+        if(element % 2 === 0 )  {
+            eventNumbers.push(element)
+        }
+    });
   };
   
   // Función findMaxNumber: Encontrar el mayor número en un array
   // Parámetros: array (Array) - Un array de números
   // Devuelve: Number - El mayor número en el array
   const findMaxNumber = () => {
-    
+    let maxNumber = Number.NEGATIVE_INFINITY;
+    array.forEach(element => {
+        if (element > maxNumber) {
+            maxNumber = element;
+        }
+    });
   };
   
   // Función toUpperCaseStrings: Convertir un array de strings a mayúsculas
