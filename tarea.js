@@ -3,7 +3,13 @@
 // Parámetros: array (Array) - Un array de números
 // Devuelve: Number - La suma de todos los elementos del array
 const sumArray = () => {
-    
+    let sum = 0;
+
+    array.forEach(element => {
+        sum += elemnt;
+    });
+
+    return sum;
   };
   
   // Función filterEvenNumbers: Filtrar números pares de un array
