@@ -2,7 +2,7 @@
 // Función sumArray: Suma de todos los elementos de un array
 // Parámetros: array (Array) - Un array de números
 // Devuelve: Number - La suma de todos los elementos del array
-const sumArray = () => {
+const sumArray = (array) => {
     let sum = 0;
 
     array.forEach(element => {
@@ -16,7 +16,7 @@ const sumArray = () => {
   // Función filterEvenNumbers: Filtrar números pares de un array
   // Parámetros: array (Array) - Un array de números
   // Devuelve: Array - Un nuevo array con solo los números pares del array original
-  const filterEvenNumbers = () => {
+  const filterEvenNumbers = (array) => {
     const evenNumbers = [];
     array.forEach(element => {
         if(element % 2 === 0 )  {
@@ -29,7 +29,7 @@ const sumArray = () => {
   // Función findMaxNumber: Encontrar el mayor número en un array
   // Parámetros: array (Array) - Un array de números
   // Devuelve: Number - El mayor número en el array
-  const findMaxNumber = () => {
+  const findMaxNumber = (array) => {
     let maxNumber = Number.NEGATIVE_INFINITY;
     array.forEach(element => {
         if (element > maxNumber) {
@@ -42,7 +42,7 @@ const sumArray = () => {
   // Función toUpperCaseStrings: Convertir un array de strings a mayúsculas
   // Parámetros: array (Array) - Un array de strings
   // Devuelve: Array - Un nuevo array con todas las strings convertidas a mayúsculas
-  const toUpperCaseStrings = () => {
+  const toUpperCaseStrings = (array) => {
     const upperCaseArray = array.map(string => string.toUpperCase());
     return upperCaseArray;
   };
@@ -51,7 +51,7 @@ const sumArray = () => {
   // Función calculateAverage: Calcular el promedio de un array de números
   // Parámetros: array (Array) - Un array de números
   // Devuelve: Number - El promedio de los números en el array
-  const calculateAverage = () => {
+  const calculateAverage = (array) => {
     let sum = 0;
     
     array.forEach(element => {
@@ -66,7 +66,7 @@ const sumArray = () => {
   // Función sortNumbersAscending: Ordenar un array de números de forma ascendente
   // Parámetros: array (Array) - Un array de números
   // Devuelve: Array - Un nuevo array con los números ordenados de forma ascendente
-  const sortNumbersAscending = () => {
+  const sortNumbersAscending = (array) => {
     const sortedArray = array.slice().sort((a, b) => a - b);
     return sortedArray;
   };
@@ -76,7 +76,7 @@ const sumArray = () => {
   // - array (Array) - Un array de elementos
   // - condition (Function) - Una función de condición que devuelve true o false
   // Devuelve: Any - El primer elemento que cumple con la condición, o undefined si ninguno lo hace
-  const findFirstElement = () => {
+  const findFirstElement = (array, condition) => {
     for (let i = 0; i < array.length; i++) {
     
         if (condition(array[i])) {
@@ -89,8 +89,8 @@ const sumArray = () => {
   // Función countElements: Contar la cantidad de elementos en un array
   // Parámetros: array (Array) - Un array de elementos
   // Devuelve: Number - La cantidad de elementos en el array
-  const countElements = () => {
-    
+  const countElements = (array) => {
+    return array.length;
   };
   
   // Función concatenateArrays: Concatenar dos arrays
@@ -98,34 +98,28 @@ const sumArray = () => {
   // - array1 (Array) - El primer array a concatenar
   // - array2 (Array) - El segundo array a concatenar
   // Devuelve: Array - Un nuevo array que es la concatenación de los dos arrays proporcionados
-  const concatenateArrays = () => {
-    
+  const concatenateArrays = (array1, array2) => {
+    return array1.concat(array2);
   };
   
   // Función squareNumbers: Calcular el cuadrado de cada número en un array
   // Parámetros: array (Array) - Un array de números
   // Devuelve: Array - Un nuevo array con los cuadrados de los números en el array original
-  const squareNumbers = () => {
-    
+  const squareNumbers = (array) => {
+    return array.map(number => number * number);
   };
 
   // Función flecha para agregar habilidades a un jugador de un juego
 const agregarHabilidad = (jugador, nuevaHabilidad) => {
-    /*
-    Parámetros de entrada:
-    - jugador: objeto que representa al jugador del juego.
-    - nuevaHabilidad: string que representa la nueva habilidad a agregar al jugador.
+   if (!jugador.habilidades) {
+    jugador.habilidades = [];
+}
 
-    Lo que hace la función:
-    Esta función recibe un objeto de jugador y una nueva habilidad como entrada.
-    Verifica si el jugador tiene un arreglo de habilidades. Si no lo tiene, lo crea.
-    Luego, agrega la nueva habilidad al arreglo de habilidades del jugador si esta no existe
+if (!jugador.habilidades.includes(nuevaHabilidad)) {
+    jugador.habilidades.push(nuevaHabilidad);
+}
 
-    Valor de retorno:
-    Retorna el objeto jugador modificado con la nueva habilidad agregada.
-    */
-    
-   
+return jugador;
 };
 
 // Función para calcular la duración total de reproducción de todas las películas.
