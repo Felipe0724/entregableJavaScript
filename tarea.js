@@ -271,90 +271,127 @@ class Motocicleta extends Vehiculo {
      * @param {number} numRuedas - El número de ruedas de la motocicleta.
      * @param {string} tipo - El tipo de motocicleta (deportiva, touring, etc.).
      */
-    
+      constructor(marca, modelo, año, color, cilindrada, potencia, numRuedas, tipo){
+        this.marca = marca;
+        this.modelo = modelo;
+        this.año = año;
+        this.color = color;
+        this.cilindrada = cilindrada;
+        this.potencia = potencia;
+        this.numRuedas = numRuedas;
+        this.tipo = tipo;
+      }
 
     /**
      * Método para obtener la información de la motocicleta.
      * @returns {string} - La información de la motocicleta en formato de cadena de texto.
      */
     obtenerInformacion() {
-       
+      return `Motocicleta: ${this.marca} ${this.modelo} (${this.año}), Color: ${this.color}, Cilindrada: ${this.cilindrada} cc, Potencia: ${this.potencia} hp, Ruedas: ${this.numRuedas}, Tipo: ${this.tipo}`;
     }
 }
 
-// Clase que representa un camión
 class Camion extends Vehiculo {
-    /**
-     * Constructor de la clase Camion.
-     * @param {string} marca - La marca del camión.
-     * @param {string} modelo - El modelo del camión.
-     * @param {number} año - El año de fabricación del camión.
-     * @param {string} color - El color del camión.
-     * @param {number} cilindrada - La cilindrada del motor del camión.
-     * @param {number} potencia - La potencia del motor del camión.
-     * @param {number} numEjes - El número de ejes del camión.
-     * @param {number} capacidadCarga - La capacidad de carga del camión en toneladas.
-     * @param {string} tipoCarroceria - El tipo de carrocería del camión (remolque, furgón, etc.).
-     */
-    
+  /**
+   * Constructor de la clase Camion.
+   * @param {string} marca - La marca del camión.
+   * @param {string} modelo - El modelo del camión.
+   * @param {number} año - El año de fabricación del camión.
+   * @param {string} color - El color del camión.
+   * @param {number} cilindrada - La cilindrada del motor del camión.
+   * @param {number} potencia - La potencia del motor del camión.
+   * @param {number} numEjes - El número de ejes del camión.
+   * @param {number} capacidadCarga - La capacidad de carga del camión en toneladas.
+   * @param {string} tipoCarroceria - El tipo de carrocería del camión (remolque, furgón, etc.).
+   */
+  constructor(marca, modelo, año, color, cilindrada, potencia, numEjes, capacidadCarga, tipoCarroceria) {
+      this.marca = marca;
+      this.modelo = modelo;
+      this.año = año;
+      this.color = color;
+      this.cilindrada = cilindrada;
+      this.potencia = potencia;
+      this.numEjes = numEjes;
+      this.capacidadCarga = capacidadCarga;
+      this.tipoCarroceria = tipoCarroceria;
+  }
 
-    /**
-     * Método para obtener la información del camión.
-     * @returns {string} - La información del camión en formato de cadena de texto.
-     */
-    obtenerInformacion() {
-        
-    }
+  /**
+   * Método para obtener la información del camión.
+   * @returns {string} - La información del camión en formato de cadena de texto.
+   */
+  obtenerInformacion() {
+      return `Camión: ${this.marca} ${this.modelo} (${this.año}), Color: ${this.color}, Cilindrada: ${this.cilindrada} cc, Potencia: ${this.potencia} hp, Ejes: ${this.numEjes}, Capacidad de carga: ${this.capacidadCarga} ton, Tipo de carrocería: ${this.tipoCarroceria}`;
+  }
 }
+
 
 // Clase que representa un autobús
 class Autobus extends Vehiculo {
-    /**
-     * Constructor de la clase Autobus.
-     * @param {string} marca - La marca del autobús.
-     * @param {string} modelo - El modelo del autobús.
-     * @param {number} año - El año de fabricación del autobús.
-     * @param {string} color - El color del autobús.
-     * @param {number} cilindrada - La cilindrada del motor del autobús.
-     * @param {number} potencia - La potencia del motor del autobús.
-     * @param {number} capacidadPasajeros - La capacidad de pasajeros del autobús.
-     * @param {string} tipoCombustible - El tipo de combustible del autobús.
-     * @param {string} tipoMotor - El tipo de motor del autobús (diésel, gasolina, eléctrico, etc.).
-     */
-   
+  /**
+   * Constructor de la clase Autobus.
+   * @param {string} marca - La marca del autobús.
+   * @param {string} modelo - El modelo del autobús.
+   * @param {number} año - El año de fabricación del autobús.
+   * @param {string} color - El color del autobús.
+   * @param {number} cilindrada - La cilindrada del motor del autobús.
+   * @param {number} potencia - La potencia del motor del autobús.
+   * @param {number} capacidadPasajeros - La capacidad de pasajeros del autobús.
+   * @param {string} tipoCombustible - El tipo de combustible del autobús.
+   * @param {string} tipoMotor - El tipo de motor del autobús (diésel, gasolina, eléctrico, etc.).
+   */
+  constructor(marca, modelo, año, color, cilindrada, potencia, capacidadPasajeros, tipoCombustible, tipoMotor) {
+      this.marca = marca;
+      this.modelo = modelo;
+      this.año = año;
+      this.color = color;
+      this.cilindrada = cilindrada;
+      this.potencia = potencia;
+      this.capacidadPasajeros = capacidadPasajeros;
+      this.tipoCombustible = tipoCombustible;
+      this.tipoMotor = tipoMotor;
+  }
 
-    /**
-     * Método para obtener la información del autobús.
-     * @returns {string} - La información del autobús en formato de cadena de texto.
-     */
-    obtenerInformacion() {
-        
-    }
+  /**
+   * Método para obtener la información del autobús.
+   * @returns {string} - La información del autobús en formato de cadena de texto.
+   */
+  obtenerInformacion() {
+      return `Autobús: ${this.marca} ${this.modelo} (${this.año}), Color: ${this.color}, Cilindrada: ${this.cilindrada} cc, Potencia: ${this.potencia} hp, Capacidad de pasajeros: ${this.capacidadPasajeros}, Tipo de combustible: ${this.tipoCombustible}, Tipo de motor: ${this.tipoMotor}`;
+  }
 }
-
-// Clase que representa una bicicleta
 class Bicicleta extends Vehiculo {
-    /**
-     * Constructor de la clase Bicicleta.
-     * @param {string} marca - La marca de la bicicleta.
-     * @param {string} modelo - El modelo de la bicicleta.
-     * @param {number} año - El año de fabricación de la bicicleta.
-     * @param {string} tipo - El tipo de bicicleta (montaña, carretera, urbana, etc.).
-     * @param {number} numMarchas - El número de marchas de la bicicleta.
-     * @param {string} material - El material del que está hecha la bicicleta (aluminio, acero, carbono, etc.).
-     * @param {string} suspencion - El tipo de suspensión de la bicicleta (delantera, trasera, doble, rígida, etc.).
-     * @param {string} frenos - El tipo de frenos de la bicicleta (disco, v-brake, caliper, etc.).
-     * @param {string} tipoManubrio - El tipo de manubrio de la bicicleta (recto, curvo, doble altura, etc.).
-     */
-  
+  /**
+   * Constructor de la clase Bicicleta.
+   * @param {string} marca - La marca de la bicicleta.
+   * @param {string} modelo - El modelo de la bicicleta.
+   * @param {number} año - El año de fabricación de la bicicleta.
+   * @param {string} tipo - El tipo de bicicleta (montaña, carretera, urbana, etc.).
+   * @param {number} numMarchas - El número de marchas de la bicicleta.
+   * @param {string} material - El material del que está hecha la bicicleta (aluminio, acero, carbono, etc.).
+   * @param {string} suspension - El tipo de suspensión de la bicicleta (delantera, trasera, doble, rígida, etc.).
+   * @param {string} frenos - El tipo de frenos de la bicicleta (disco, v-brake, caliper, etc.).
+   * @param {string} tipoManubrio - El tipo de manubrio de la bicicleta (recto, curvo, doble altura, etc.).
+   */
+  constructor(marca, modelo, año, tipo, numMarchas, material, suspension, frenos, tipoManubrio) {
+      this.marca = marca;
+      this.modelo = modelo;
+      this.año = año;
+      this.tipo = tipo;
+      this.numMarchas = numMarchas;
+      this.material = material;
+      this.suspension = suspension;
+      this.frenos = frenos;
+      this.tipoManubrio = tipoManubrio;
+  }
 
-    /**
-     * Método para obtener la información de la bicicleta.
-     * @returns {string} - La información de la bicicleta en formato de cadena de texto.
-     */
-    obtenerInformacion() {
-        
-    }
+  /**
+   * Método para obtener la información de la bicicleta.
+   * @returns {string} - La información de la bicicleta en formato de cadena de texto.
+   */
+  obtenerInformacion() {
+      return `Bicicleta: ${this.marca} ${this.modelo} (${this.año}), Tipo: ${this.tipo}, Marchas: ${this.numMarchas}, Material: ${this.material}, Suspensión: ${this.suspension}, Frenos: ${this.frenos}, Manubrio: ${this.tipoManubrio}`;
+  }
 }
 
 /**
