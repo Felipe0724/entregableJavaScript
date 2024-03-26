@@ -128,7 +128,12 @@ return jugador;
 // Retorna:
 // - Un número que representa la duración total de todas las películas en minutos.
 const calcularDuracionTotal = (peliculas) => {
-    
+    let duracionTotal = 0;
+    peliculas.forEach(pelicula => {
+      
+      duracionTotal += pelicula.duracion;
+  });
+  return duracionTotal;
 };
 
 
@@ -140,7 +145,11 @@ const calcularDuracionTotal = (peliculas) => {
 // Retorna:
 // - Un array de objetos que representan películas que coinciden con el título y el género especificados.
 const buscarPeliculas = (peliculas, titulo, genero) => {
+    const peliculasFiltradas = peliculas.filter(pelicula => {
     
+    return pelicula.titulo.toLowerCase().includes(titulo.toLowerCase()) && pelicula.genero.toLowerCase().includes(genero.toLowerCase());
+    });
+    return peliculasFiltradas;
 };
 
 // Función para calcular el promedio de puntajes de las películas.
@@ -149,7 +158,15 @@ const buscarPeliculas = (peliculas, titulo, genero) => {
 // Retorna:
 // - Un número que representa el promedio de puntajes de todas las películas.
 const calcularPromedioPuntajes = (peliculas) => {
+    if (peliculas.length === 0) {
+      return 0;
+    }
+    const sumaPuntajes = peliculas.reduce((total, pelicula) => total + pelicula.puntaje, 0);
+    
    
+    const promedio = sumaPuntajes / peliculas.length;
+    
+    return promedio;
 };
 
 // Función para filtrar películas por año de lanzamiento.
@@ -160,7 +177,9 @@ const calcularPromedioPuntajes = (peliculas) => {
 // - Un array de objetos que representan películas lanzadas en el año especificado.
 const filtrarPorAño = (peliculas, año) => {
     // Filtrar las películas por año de lanzamiento.
-    
+    const peliculasFiltradas = peliculas.filter(pelicula => pelicula.año === año);
+
+    return peliculasFiltradas;
 };
 
 // Función para calcular el promedio de duración de las películas por género.
@@ -171,7 +190,13 @@ const filtrarPorAño = (peliculas, año) => {
 // - Un número que representa el promedio de duración de las películas del género especificado.
 const calcularPromedioDuracionPorGenero = (peliculas, genero) => {
     // Filtrar las películas por género.
-    
+    const peliculasPorGenero = peliculas.filter(pelicula => pelicula.genero.toLowerCase() === genero.toLowerCase());
+
+    const sumaDuraciones = peliculasPorGenero.reduce((total, pelicula) => total + pelicula.duracion, 0);
+
+    const promedio = sumaDuraciones / peliculasPorGenero.length;
+
+    return promedio;
 };
 
 
@@ -183,14 +208,17 @@ class Vehiculo {
      * @param {string} modelo - El modelo del vehículo.
      * @param {number} año - El año de fabricación del vehículo.
      */
-   
-
+      constructor(marca, modelo, año) {
+        this.marca = marca;
+        this. modelo = modelo;
+        this.año = año;
+      }
     /**
      * Método para obtener la información del vehículo.
      * @returns {string} - La información del vehículo en formato de cadena de texto.
      */
     obtenerInformacion() {
-        
+        return `Vehiculo: ${this.marca} ${this.modelo} (${this.año})`
     }
 }
 
@@ -209,14 +237,24 @@ class Automovil extends Vehiculo {
      * @param {number} numAsientos - El número de asientos del automóvil.
      * @param {string} tipoTransmision - El tipo de transmisión del automóvil.
      */
-    
+      constructor (marca, modelo, año, color, cilindrada, potencia, numPuertas, numAsientos, tipoTransmision) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.año = año;
+        this.color = color;
+        this.cilindrada = cilindrada;
+        this.potencia = potencia;
+        this.numPuertas = numPuertas;
+        this.numAsientos = numAsientos;
+        this.tipoTransmision = tipoTransmision;
+      }
 
     /**
      * Método para obtener la información del automóvil.
      * @returns {string} - La información del automóvil en formato de cadena de texto.
      */
     obtenerInformacion() {
-        
+      return `Automóvil: ${this.marca} ${this.modelo} (${this.año}), Color: ${this.color}, Cilindrada: ${this.cilindrada} cc, Potencia: ${this.potencia} hp, Puertas: ${this.numPuertas}, Asientos: ${this.numAsientos}, Transmisión: ${this.tipoTransmision}`;
     }
 }
 
